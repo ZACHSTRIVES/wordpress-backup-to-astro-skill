@@ -1,0 +1,4 @@
+interface:
+  display_name: "WordPress Backup to Astro"
+  short_description: "Rebuild WordPress backups as standalone Astro sites"
+  default_prompt: "Use $wordpress-backup-to-astro to migrate my WordPress backup into a standalone Astro site, excluding forms."
