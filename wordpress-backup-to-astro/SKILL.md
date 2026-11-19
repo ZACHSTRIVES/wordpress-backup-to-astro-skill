@@ -42,8 +42,20 @@ Restore navigation, mobile menus, filters, galleries, lightboxes, pagination, an
 
 Use local media with an explicit mapping, intrinsic dimensions, responsive variants where useful, and original crop intent. Avoid selecting images by filename guess or filesystem order. Preserve contact text and document links only when supported by the source; report missing documents instead of fabricating them.
 
-### 4. Validate and deliver
+### 4. Review fonts, animation, and every page
 
-Read [verification.md](references/verification.md). Run the actual project's build and appropriate checks. Reconcile routes, content counts, references, and exclusions; inspect representative desktop and mobile pages. Report what was verified and what remains blocked by missing source material or unavailable browser tools.
+Read the visual and interaction guidance in [verification.md](references/verification.md). Verify recovered font families, files, weights and styles against the source, and restore source-supported animations and transitions with reduced-motion behavior.
+
+Review every included route from the route inventory at desktop and mobile sizes, not only representative page families. Compare with available source evidence, exercise each page's interactions, fix discrepancies, and revisit affected pages after shared component or style changes. Track each route's review status, fixes and unresolved gaps in the private migration report. If source evidence or browser tools are missing, mark affected checks as unverified and explain the limitation.
+
+### 5. Remove unused resources, code, and backup files
+
+Follow the cleanup guidance in [verification.md](references/verification.md). Remove confirmed unused media/fonts, components, styles, scripts and dependencies, along with redundant backup copies and temporary extraction artifacts from the destination project. Check imports, content data, CSS URLs, dynamic references and generated routes before deleting candidates; absence from a text search alone does not establish that a file is unused.
+
+Keep the original source backup safely outside the deliverable; never delete its only copy. Retain files required to build, maintain or license the site. Record cleanup scope in the private migration report, then rebuild and recheck local references and affected pages to catch regressions.
+
+### 6. Validate and deliver
+
+Read [verification.md](references/verification.md). Run the actual project's build and appropriate checks. Reconcile routes, content counts, references, and exclusions; confirm the page-by-page desktop and mobile review is complete or explicitly marked unverified. Report what was verified and what remains blocked by missing source material or unavailable browser tools.
 
 The deliverable must build independently from the backup and temporary extraction files. Keep reusable extraction logic private to the migration project when useful; never delete the only source backup as cleanup. Hand off editable content locations, build instructions, URL changes, known gaps, and the form exclusion. A migration request alone does not authorize production deployment, DNS changes, or publication of the source backup.
